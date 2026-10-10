@@ -1,0 +1,28 @@
+[tool.poetry]
+name = "agritwin-dacia5"
+version = "0.1.0"
+description = "Digital shadow for early crop classification in Romania using Sentinel-1 and Sentinel-2"
+authors = ["Alexandru-Costin Enache <alexenache2020@gmail.com>"]
+readme = "README.md"
+packages = [{include = "src"}]
+
+[tool.poetry.dependencies]
+python = ">=3.11,<3.13"
+torch = "^2.4.0"
+torchvision = "^0.19.0"
+torchaudio = "^2.4.0"
+rasterio = "^1.3.10"
+geopandas = "^1.0.1"
+shapely = "^2.0.6"
+numpy = "^1.26.4"
+pandas = "^2.2.2"
+scikit-learn = "^1.5.1"
+matplotlib = "^3.9.2"
+
+[tool.poetry.group.dev.dependencies]
+jupyterlab = "^4.2.4"
+ipykernel = "^6.29.5"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
