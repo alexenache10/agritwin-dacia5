@@ -21,26 +21,29 @@ class DACIA5Config:
     train_csv: Path = train_dir / "train.csv"
     test_csv: Path = test_dir / "test.csv"
 
-    # Official crop label mapping
+    cache_path: Path = Path("data/processed/dacia5_cp2_cache.pkl")
+    results_json_path: Path = Path("docs/cp2_metrics.json")
+    figure_cp2_path: Path = Path("docs/cp2_baseline_representation.png")
+
     crop_names = {
-        101: "Common winter wheat",
+        101: "Winter wheat",
         108: "Corn",
         131: "Sunflower",
         151: "Winter rape",
         202: "Lucerne",
         253: "Fodder crops",
-        254: "Dry pulses",
         1010: "Winter barley",
         2037: "Permanent grassland",
-        3017: "Arable land / Other crops",
-        9747: "Fallow land (2020-2021)",
-        9748: "Fallow land (2022-2024)",
+        3017: "Arable land / Other",
+        9748: "Fallow land",
     }
 
     spatial_size: int = 32
     s1_channels: int = 2
     s2_channels: int = 12
     fused_channels: int = 14
+    eval_months: tuple = (5, 6, 7, 8, 9, 10)
+    seeds: tuple = (42, 43, 44, 45, 46)
 
 
 config = DACIA5Config()
